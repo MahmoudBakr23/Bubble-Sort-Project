@@ -14,7 +14,7 @@ def bubble_sort(numbers)
     end
     index = 0
   end
-  numbers
+  return numbers
 end
 
 def bubble_sort_by(arr)
@@ -33,7 +33,7 @@ def bubble_sort_by(arr)
     end
     i = 0
   end
-  arr
+  return arr
 end
 
 bubble_sort_by(%w[hi hello hey]) do |left, right|
