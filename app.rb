@@ -36,6 +36,9 @@ def bubble_sort_by(arr)
   arr
 end
 
-bubble_sort_by(%w[hi hello hey]) do |left, right|
+sorted_by = bubble_sort_by(%w[hi hello hey yo]) do |left, right|
   left.length - right.length
 end
+
+puts bubble_sort([5, 4, 3, 2, 1])
+puts sorted_by
