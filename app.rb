@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-=begin
 def bubble_sort(numbers)
   swap = true
   index = 0
@@ -16,34 +14,31 @@ def bubble_sort(numbers)
     end
     index = 0
   end
-  return numbers
+  numbers
 end
 
 numbers = [4, 3, 78, 2, 0, 2]
 puts bubble_sort(numbers)
-=end
 
-def bubble_sort_by(numbers)
+def bubble_sort_by(arr)
+  i = 0
   swap = true
-  index = 0
   while swap
     swap = false
-    while index < numbers.length - 1
-      next unless (yield numbers[index], numbers[index + 1]).positive?
-      swap = true
-      sorted = numbers[index]
-      numbers[index] = numbers[index + 1]
-      numbers[index + 1] = sorted
-      index += 1
+    while i < arr.length - 1
+      if yield(arr[i], arr[i + 1]).positive?
+        temp = arr[i]
+        arr[i] = arr[i + 1]
+        arr[i + 1] = temp
+        swap = true
+      end
+      i += 1
     end
-    index = 0
+    i = 0
   end
-  return numbers
+  puts arr
 end
 
-numbers = [4,2,3,7,6]
-bsort_by = bubble_sort_by(numbers) do |left, right|
-  left - right
+bubble_sort_by(%w[hi hello hey]) do |left, right|
+  left.length - right.length
 end
-
-puts bsort_by
