@@ -17,9 +17,6 @@ def bubble_sort(numbers)
   numbers
 end
 
-numbers = [4, 3, 78, 2, 0, 2]
-puts bubble_sort(numbers)
-
 def bubble_sort_by(arr)
   i = 0
   swap = true
@@ -36,7 +33,7 @@ def bubble_sort_by(arr)
     end
     i = 0
   end
-  puts arr
+  arr
 end
 
 bubble_sort_by(%w[hi hello hey]) do |left, right|
